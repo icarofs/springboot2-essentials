@@ -57,7 +57,7 @@ class AnimeRepositoryTest {
         Anime animeSaved = this.animeRepository.save(animeToBeSaved);
         String name = animeSaved.getName();
         List<Anime> animes = this.animeRepository.findByName(name);
-        Assertions.assertThat(animes).isNotEmpty();
+        Assertions.assertThat(animes).isNotEmpty().contains(animeSaved);
         Assertions.assertThat(animes).contains(animeSaved);
     }
 
